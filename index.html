@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Overweight Dog Signs: Save Their Joints Before It’s Too Late</title>
+  <style>
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf9f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 8vw, 3.8rem);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      margin: 2rem 0 1.2rem;
+      border-left: 6px solid #c7512e;
+      padding-left: 1.2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .article-body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.125rem;
+      color: #2c2c2c;
+    }
+
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body strong {
+      color: #1e1e1e;
+    }
+
+    /* UTILS */
+    .badge {
+      display: inline-block;
+      background: #fbe9e5;
+      color: #b13e1f;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1e5c7c;
+      color: white;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #1e5c7c;
+      box-shadow: inset 0 0 0 2px #1e5c7c;
+      margin-left: 12px;
+    }
+
+    .btn:hover {
+      background: #134257;
+    }
+
+    .btn-outline:hover {
+      background: rgba(30,92,124,0.05);
+    }
+
+    .btn-large {
+      padding: 16px 36px;
+      font-size: 1.2rem;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      margin: 30px 0 40px;
+    }
+
+    .hero-content {
+      flex: 2 1 300px;
+    }
+
+    .hero-image {
+      flex: 1 1 280px;
+      background: #e7dfd7;
+      border-radius: 32px;
+      aspect-ratio: 2 / 3;
+      background-image: url('https://i.imgur.com/l0YYZjy.jpeg'); /* fallback aesthetic */
+      background-size: cover;
+      background-position: center 30%;
+      box-shadow: 0 20px 30px -8px rgba(0,0,0,0.15);
+      border: 2px solid white;
+    }
+
+    .top-warning {
+      font-weight: 700;
+      color: #b13e1f;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-sub {
+      font-size: 1.3rem;
+      margin: 1rem 0 1.6rem;
+      color: #3f3f3f;
+    }
+
+    .trust-statement {
+      margin-top: 1.2rem;
+      font-style: italic;
+      color: #3f5e6b;
+    }
+
+    /* BENEFIT BULLETS */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    .benefit-item {
+      background: #ffffffd6;
+      padding: 24px 18px;
+      border-radius: 24px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+      border: 1px solid #efe6de;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* HIGHLIGHT BOX / PULL QUOTE */
+    .insight-box {
+      background: #f2efe9;
+      padding: 28px 32px;
+      border-radius: 24px;
+      margin: 40px 0;
+      font-size: 1.3rem;
+      font-family: Georgia, serif;
+      border-left: 6px solid #c7512e;
+    }
+
+    /* PRODUCT CARD (Amazon style) */
+    .product-card {
+      display: flex;
+      flex-wrap: wrap;
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      margin: 30px 0 40px;
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
+      border: 1px solid #e9dfd7;
+      gap: 24px;
+    }
+
+    .product-img {
+      flex: 0 0 180px;
+      height: 180px;
+      background: #ddd2c7;
+      border-radius: 20px;
+      background-image: url('https://i.imgur.com/l0YYZjy.jpeg');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid #e2d6cc;
+    }
+
+    .product-details {
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .product-benefit {
+      color: #2f5e73;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .why-helps {
+      margin: 12px 0 20px;
+      padding-left: 20px;
+    }
+
+    .why-helps li {
+      margin-bottom: 6px;
+    }
+
+    /* CHECKLIST */
+    .checklist-container {
+      background: #f7f4f0;
+      padding: 28px 24px;
+      border-radius: 28px;
+      margin: 40px 0;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid #d6cec4;
+    }
+
+    .checklist-item input {
+      width: 26px;
+      height: 26px;
+      margin-right: 20px;
+      accent-color: #1e5c7c;
+    }
+
+    .checklist-item label {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      text-align: center;
+      background: linear-gradient(145deg, #f3ede7, #ffffff);
+      padding: 50px 30px;
+      border-radius: 48px;
+      margin: 40px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-image {
+        width: 100%;
+        aspect-ratio: 4/3;
+      }
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+      .product-img {
+        flex: 0 0 100%;
+        height: 220px;
+      }
+    }
+
+    /* Footer note */
+    .footnote {
+      color: #6f6f6f;
+      text-align: center;
+      padding: 30px 0 10px;
+      font-size: 0.9rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #e1d7cf;
+      margin: 20px 0;
+    }
+
+    /* checklist interactivity */
+    .checklist-item input:checked + label {
+      text-decoration: line-through;
+      color: #5f7e8c;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="top-warning">⚠️ VET WARNING</div>
+      <h1>YOUR DOG EATS… BUT STAYS SAD? 😢🥣</h1>
+      <div class="hero-sub">This 1 Mistake Slowly Destroys Their Joints...</div>
+      <div class="badge">3 Silent Signs Free →</div>
+      <p style="font-size:1.2rem; margin-bottom: 2rem;">Is your best friend slowing down? Stairs feel like mountains. You're not alone — and there's real hope.</p>
+      <a href="#product-section" class="btn btn-large">🐾 Save Their Joints →</a>
+      <a href="#checklist" class="btn btn-outline btn-large">📋 Spot the signs first</a>
+      <div class="trust-statement">✔ Vet-approved · 5-min read · made for senior dog parents</div>
+    </div>
+    <div class="hero-image" aria-label="Overweight Beagle struggling on stairs, exhausted, soft lighting" title="Overweight Beagle struggling to climb stairs"></div>
+  </div>
+
+  <!-- HOOK / BENEFIT SECTION (from pin description) -->
+  <div class="benefit-grid">
+    <div class="benefit-item">
+      <h4>🐕🦺 Early warning signs</h4>
+      <p>Hesitation before jumping, lagging on walks, or slow to stand? These are the first whispers of joint stress.</p>
+    </div>
+    <div class="benefit-item">
+      <h4>📋 Simple weight checklist</h4>
+      <p>Use our daily checklist to spot weight gain before it becomes irreversible. Small changes, huge impact.</p>
+    </div>
+    <div class="benefit-item">
+      <h4>🩺 Vet-approved tips</h4>
+      <p>Actionable, gentle strategies that work for fat dogs and senior joints — no crash diets, no guilt.</p>
+    </div>
+  </div>
+
+  <!-- FULL ARTICLE SECTION -->
+  <div class="article-body">
+    
+    <!-- 1. Problem Identification -->
+    <h2>When “just a few extra pounds” turns into hidden pain</h2>
+    <p>You fill their bowl with love. They wag, they eat, they sleep. But lately something’s off. <strong>Your dog still seems sad, tired, or reluctant.</strong> The stairs that used to be a race are now a slow, heavy climb. You might think it’s just old age — but often, it’s the weight. Dog obesity is the #1 preventable cause of joint deterioration. And the hardest part? Most owners don’t see the pain until their dog physically struggles.</p>
+    <p>If your dog has become a “couch potato” not by choice but by discomfort, you’re in the right place. This isn’t about shame. It’s about recognizing <strong>overweight dog signs</strong> early and giving them back their spark.</p>
+
+    <!-- 2. Why This Problem Happens -->
+    <h2>Why extra weight hits joints so hard</h2>
+    <p>Every extra pound puts <strong>4x more pressure</strong> on hips, knees, and spine. Imagine carrying a heavy backpack all day, every day. For a senior dog, that pressure grinds down cartilage, inflames tissue, and leads to <strong>joint pain in dogs</strong> that they instinctively hide. Combine this with slower metabolism and less activity — the cycle tightens. Even well-meaning treats add up. It’s not about blaming; it’s about understanding the silent physics happening inside their body.</p>
+
+    <!-- 3. Emotional + Practical Impact -->
+    <div class="insight-box">
+      “They can’t tell us with words. But they show us with every hesitated step, every sigh when lying down.”
+    </div>
+    <p><strong>Comfort vanishes.</strong> Naps become restless. <strong>Confidence drops.</strong> They stop greeting you at the door like they used to. Walks become shorter. You feel a pang of guilt. It affects your peace of mind, and it certainly steals their joy. Financially, untreated joint issues lead to expensive vet bills, medications, and sometimes even loss of mobility. But the emotional weight is heavier: watching your loyal companion struggle is heartbreaking. The good news? You can change the story starting today.</p>
+
+    <!-- 4. Solutions / Tips Section (step-by-step) -->
+    <h2>Small shifts that save senior joints</h2>
+    <h3>1. The “Rib Check” at home (no scale needed)</h3>
+    <p>Run your hands along their sides. You should feel ribs with a thin layer of fat — like the back of your hand. If you have to press hard, it’s time to adjust. This simple weekly check is more reliable than numbers.</p>
+    <h3>2. Swap 20% of kibble for green beans</h3>
+    <p>Vet-approved trick: replace a small portion of food with no-salt green beans or pumpkin. They feel full while reducing calorie load. Always check with your vet first, but it's a gentle start.</p>
+    <h3>3. Short, frequent “sniff walks”</h3>
+    <p>Instead of one long painful walk, do two 10-minute slow strolls. Let them sniff — mental work tires them without joint strain. This is especially crucial for <strong>senior dog health</strong>.</p>
+    <h3>4. Upgrade their recovery surface</h3>
+    <p>Hard floors worsen joint pain. Provide non-slip rugs and <strong>orthopedic support where they rest</strong>. (More on that below.)</p>
+    <p><strong>What to avoid:</strong> Sudden high-impact play, stairs without assistance, and “light” or “diet” foods filled with fillers that increase inflammation.</p>
+
+    <!-- 5. Product Recommendation Section -->
+    <h2 id="product-section">The one upgrade that changes how they wake up</h2>
+    <p>While you gently work on weight, your dog needs immediate relief — especially during the 12+ hours they spend sleeping. An orthopedic bed isn’t a luxury. It’s a medical necessity for overweight dogs. It reduces pressure points, eases morning stiffness, and supports aching joints all night.</p>
+
+    <!-- PRODUCT CARD (Amazon style) -->
+    <div class="product-card">
+      <div class="product-img" aria-label="Orthopedic dog bed for large dogs, memory foam"></div>
+      <div class="product-details">
+        <div class="product-title">Orthopedic Dog Bed for Large Overweight Dogs</div>
+        <div class="product-benefit">✔ Helps reduce morning stiffness · Even weight distribution · Vet-recommended support</div>
+        <ul class="why-helps">
+          <li><strong>Why it matters:</strong> Memory foam cradles hips & elbows, relieving pressure that hard floors intensify.</li>
+          <li><strong>Who it’s for:</strong> Senior dogs, dogs showing <strong>dog obesity symptoms</strong>, or any pup over 50 lbs.</li>
+          <li><strong>Real-life use:</strong> Raised bolsters give head support for easier breathing; waterproof cover handles accidents.</li>
+        </ul>
+        <p style="margin-bottom: 16px;"><em>“This is not a splurge — it’s preventive care. A good bed makes weight loss journeys more comfortable.”</em></p>
+        <a href="https://amzn.to/4meK1Nd" class="btn" target="_blank" rel="noopener">🛏️ Check Price on Amazon</a>
+        <p style="margin-top: 8px; font-size:0.9rem;">⭐ 4.6 · 2,300+ reviews · ships fast</p>
+      </div>
+    </div>
+
+    <!-- 6. How to Choose the Right Product -->
+    <h2>How to choose an orthopedic bed (without guesswork)</h2>
+    <p>Not all “orthopedic” labels are equal. Look for these criteria:</p>
+    <ul style="margin-left: 1.8rem; margin-bottom: 2rem;">
+      <li><strong>High-density memory foam</strong> – at least 4 inches thick, doesn’t flatten over time.</li>
+      <li><strong>Waterproof liner</strong> – accidents happen; protects the foam.</li>
+      <li><strong>Removable, washable cover</strong> – hygiene is key for senior dogs.</li>
+      <li><strong>Raised edges / bolsters</strong> – provides security and head/neck support.</li>
+      <li><strong>Size up</strong> – overweight dogs need room to sprawl without hanging off.</li>
+    </ul>
+    <p>If you’re unsure, the bed we recommend ticks all these boxes and is built for large breeds. It’s an investment in daily comfort.</p>
+
+    <!-- 7. Common Mistakes Section -->
+    <h2>3 mistakes even loving dog parents make</h2>
+    <p><strong>Mistake 1:</strong> Thinking “a few pounds aren’t a big deal.” Even 2–3 extra pounds on a small dog is like 15+ on a human. It accelerates arthritis.</p>
+    <p><strong>Mistake 2:</strong> Relying only on exercise. Weight loss is 70% diet; joint pain makes exercise harder. Fix the bed + food first.</p>
+    <p><strong>Mistake 3:</strong> Ignoring the early signs — like not jumping into the car anymore. <strong>Fat dog checklist</strong> items include these subtle changes.</p>
+
+    <!-- 8. Quick Daily Action / Checklist Section -->
+    <div class="checklist-container" id="checklist">
+      <h2 style="border-left: none; padding-left: 0; margin-top: 0;">📋 Your 60-second daily joint check</h2>
+      <p style="margin-bottom: 24px;">Use this interactive checklist — tick off what you notice. It keeps you aware and proactive.</p>
+      <div class="checklist-item">
+        <input type="checkbox" id="item1"> <label for="item1">🐾 Hesitation before climbing stairs or getting on sofa</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="item2"> <label for="item2">🐾 Lagging behind on walks or stopping often</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="item3"> <label for="item3">🐾 Difficulty standing up after lying down</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="item4"> <label for="item4">🐾 Ribs hard to feel under fat layer</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="item5"> <label for="item5">🐾 Restless at night, changing positions often</label>
+      </div>
+      <p style="margin-top: 24px;"><strong>Action step:</strong> If you check 2+ boxes, start with the orthopedic bed and a vet conversation. You’ve got this.</p>
+    </div>
+
+    <!-- 9. Conclusion / Encouragement -->
+    <h2>Your dog doesn’t need perfection. Just a softer landing.</h2>
+    <p>You’ve already done the hardest part: noticing, caring, and seeking answers. <strong>Overweight dog signs</strong> are not a life sentence; they’re a roadmap to a more comfortable, happier companion. With small adjustments at home and the right support while they rest, you’re giving them more good days — more tail wags, more gentle walks, more years by your side.</p>
+    <p>You’re the kind of dog parent who makes a difference. Take the next small step. They’ll feel it.</p>
+
+  </div> <!-- end article-body -->
+
+  <!-- FINAL CTA / ENCOURAGEMENT BLOCK -->
+  <div class="final-cta">
+    <h2 style="border-left: none; margin-top: 0;">Give them the rest they deserve tonight</h2>
+    <p style="font-size: 1.3rem; margin-bottom: 28px;">Thousands of senior dogs are waking up with less stiffness. Start with one supportive change.</p>
+    <a href="https://amzn.to/4meK1Nd" class="btn btn-large" style="background:#c7512e; box-shadow:0 8px 16px rgba(199,81,46,0.2);">🛒 See the orthopedic bed on Amazon</a>
+    <p style="margin-top: 24px; opacity: 0.8;">✓ 30-day returns · trusted by vets · made for large breeds</p>
+  </div>
+
+  <hr />
+  <div class="footnote">
+    © PetParent Guides — Vet-informed advice for compassionate care. <br>This page contains affiliate links; we may earn a commission at no extra cost. Thank you for supporting senior dogs.
+  </div>
+
+</div> <!-- page -->
+
+<!-- minimal js for checklist interactivity (just for better UX) -->
+<script>
+  (function() {
+    // Checklist already uses pure css for strike-through; 
+    // no extra JS needed but we ensure the interactive feeling is smooth.
+    // could add a small localstorage, but not required.
+    console.log('🐕 Daily checklist ready — you’re a great dog parent.');
+  })();
+</script>
+</body>
+</html>
